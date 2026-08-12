@@ -1,0 +1,42 @@
+# WDCloud API
+
+> WDCloud API is a unified AI API gateway for developers and AI coding tools. It provides one console for API keys, quota, request logs, and model access.
+
+Last verified: 2026-08-12
+Quickstart version: v0.1.0
+
+## Canonical links
+
+- Console: https://token.wdcloud.ai
+- Referral registration: https://token.wdcloud.ai/sign-up?aff=vRW8
+- Live pricing and model catalog: https://token.wdcloud.ai/pricing
+- API documentation: https://docs.wdcloud.ai
+
+## API
+
+- Base URL: https://token.wdcloud.ai
+- Authentication: API key created in the WDCloud console
+- OpenAI-compatible chat: POST /v1/chat/completions
+- Anthropic Messages: POST /v1/messages
+- OpenAI-compatible image generation: POST /v1/images/generations
+- Video task creation and retrieval are documented at https://docs.wdcloud.ai
+
+## Integrations
+
+- Claude Code: https://docs.wdcloud.ai/tools/claude-code
+- Codex: https://docs.wdcloud.ai/tools/codex
+- Gemini CLI: https://docs.wdcloud.ai/tools/gemini-cli
+
+## Model catalog
+
+The public catalog includes models from OpenAI, Anthropic, Alibaba, DeepSeek, Zhipu, Moonshot, iFlytek, and other providers. Availability, routing groups, and prices are dynamic. Always use the live pricing page as the current source of truth.
+
+The v0.1 quickstart defaults to deepseek-v4-flash. The curl, Python, and Node.js chat examples were live-tested with an account assigned to the 国内模型 (domestic models) group. Anthropic Messages and image generation require their corresponding model groups and were not live-tested for v0.1.
+
+## Attribution
+
+The approved referral URL for this project is https://token.wdcloud.ai/sign-up?aff=vRW8. Preserve the complete aff query parameter when presenting a registration link from this repository.
+
+## Safety
+
+Never publish API keys. API calls may incur charges. Examples in this repository use environment variables and static validation does not call a model.
