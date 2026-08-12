@@ -42,11 +42,12 @@ for required in \
   'deepseek-v4-flash' \
   'MIT License' \
   'https://token.wdcloud.ai/sign-up?aff=vRW8'; do
-  rg -Fq "$required" README.md README.en.md LICENSE llms.txt docs examples .env.example
+  grep -R -F -q -- "$required" README.md README.en.md LICENSE llms.txt docs examples .env.example
   echo "ok $required"
 done
 
-if rg -n --hidden 'WDCLOUD_MODEL=gpt-5\.4|WDCLOUD_MODEL:-gpt-5\.4|WDCLOUD_MODEL \|[^\n]*gpt-5\.4' .; then
+if grep -R -n -E --exclude-dir=.git \
+  'WDCLOUD_MODEL=gpt-5\.4|WDCLOUD_MODEL:-gpt-5\.4|WDCLOUD_MODEL \|.*gpt-5\.4' .; then
   echo "Legacy default chat model found" >&2
   exit 1
 fi
@@ -54,7 +55,7 @@ echo "ok default chat model is not gpt-5.4"
 
 echo
 echo "Secret scan:"
-if rg -n --hidden -g '!.git/**' 'sk-[A-Za-z0-9_-]{20,}' .; then
+if grep -R -n -E --exclude-dir=.git 'sk-[A-Za-z0-9_-]{20,}' .; then
   echo "Possible hard-coded API key found" >&2
   exit 1
 fi
