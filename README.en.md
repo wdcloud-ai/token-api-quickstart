@@ -7,7 +7,7 @@ English | [简体中文](README.md) · [GitHub](https://github.com/wdcloud-ai/to
 
 **Use one WDCloud API key to access multiple AI model providers through a unified endpoint.** This repository contains copy-ready `curl`, Python, Node.js, Claude Code, Codex CLI, and Gemini CLI examples.
 
-> Current version: v0.2. Facts last verified on 2026-08-18. Models, routing groups, tool settings, and prices are dynamic; check the [live pricing page](https://token.wdcloud.ai/pricing) and [official docs](https://docs.wdcloud.ai) before use.
+> Current version: v0.2. Facts last verified on 2026-08-18. Models, routing groups, tool settings, and prices are dynamic; check the [live pricing page](https://token.wdcloud.ai/pricing?aff=vRW8) and [official docs](https://docs.wdcloud.ai) before use.
 
 ![WDCloud API Quickstart: one API key for multiple AI models](docs/assets/repo-social-preview.png)
 

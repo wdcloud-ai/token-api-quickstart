@@ -2,7 +2,7 @@
 
 本页提供 Claude Code、Codex 和 Gemini CLI 的可复制配置。配置来自 WDCloud 公开文档，并在本仓库进行 JSON、TOML 与静态内容检查；v0.2 尚未使用真实令牌逐项实测。
 
-模型名称、工具配置和分组权限可能变化。开始前请在[实时价格页](https://token.wdcloud.ai/pricing)确认模型，并优先参考 WDCloud 的最新工具文档。
+模型名称、工具配置和分组权限可能变化。开始前请在[实时价格页](https://token.wdcloud.ai/pricing?aff=vRW8)确认模型，并优先参考 WDCloud 的最新工具文档。
 
 ## 通用建议
 

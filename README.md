@@ -7,7 +7,7 @@
 
 **使用一个 WDCloud API Key，通过统一入口调用多家 AI 模型。** 本仓库提供可直接复制的 `curl`、Python、Node.js，以及 Claude Code、Codex、Gemini CLI 配置示例。
 
-> 当前版本：v0.2。信息核验日期：2026-08-18。模型、分组、工具配置和价格会动态调整，请以[实时价格页](https://token.wdcloud.ai/pricing)及[官方文档](https://docs.wdcloud.ai)为准。
+> 当前版本：v0.2。信息核验日期：2026-08-18。模型、分组、工具配置和价格会动态调整，请以[实时价格页](https://token.wdcloud.ai/pricing?aff=vRW8)及[官方文档](https://docs.wdcloud.ai)为准。
 
 ![WDCloud API Quickstart：一个 API Key 调用多家 AI 模型](docs/assets/repo-social-preview.png)
 
@@ -116,7 +116,7 @@ bash examples/curl/list-models.sh
 
 WDCloud API 是统一 AI API 接入平台，为 Claude Code、Codex、Gemini CLI 等 AI 编程工具提供服务。用户可在同一个控制台管理 API Key、额度、调用日志和模型访问。
 
-- 控制台：<https://token.wdcloud.ai>
+- [控制台](https://token.wdcloud.ai?aff=vRW8)
 - API 文档：<https://docs.wdcloud.ai>
 - API Base URL：`https://token.wdcloud.ai`
 - 主要厂商：OpenAI、Anthropic、阿里巴巴、DeepSeek、智谱、Moonshot、讯飞等

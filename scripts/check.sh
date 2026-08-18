@@ -111,6 +111,7 @@ echo "ok registration link"
 python3 - <<'PY'
 import re
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 approved = "https://token.wdcloud.ai/sign-up?aff=vRW8"
 paths = [Path("README.md"), Path("README.en.md"), Path("CHANGELOG.md"), Path("llms.txt"), Path(".env.example")]
@@ -121,16 +122,33 @@ paths.extend(
 )
 
 invalid = []
+untracked_navigation = []
 for path in paths:
     text = path.read_text(encoding="utf-8")
     for match in re.finditer(r"https://token\.wdcloud\.ai/sign-up[^\s)>`\"]*", text):
         if match.group(0) != approved:
             invalid.append(f"{path}: {match.group(0)}")
 
+    navigation_patterns = (
+        r"\]\((https://token\.wdcloud\.ai[^)\s]*)\)",
+        r"<(https://token\.wdcloud\.ai[^>\s]*)>",
+        r"href=[\"'](https://token\.wdcloud\.ai[^\"']*)[\"']",
+    )
+    for pattern in navigation_patterns:
+        for match in re.finditer(pattern, text):
+            url = match.group(1)
+            if parse_qs(urlsplit(url).query).get("aff") != ["vRW8"]:
+                untracked_navigation.append(f"{path}: {url}")
+
 if invalid:
     raise SystemExit("Registration URL without the promotion code found:\n" + "\n".join(invalid))
 
 print("ok no registration URL without the promotion code")
+
+if untracked_navigation:
+    raise SystemExit("Clickable token platform URL without the promotion code found:\n" + "\n".join(untracked_navigation))
+
+print("ok all clickable token platform URLs include the promotion code")
 PY
 
 if grep -R -n -E --exclude-dir=.git \

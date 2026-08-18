@@ -1,15 +1,15 @@
 # API 与工具接入索引
 
-本页记录首版 Quickstart 使用的公开能力。接口、模型和价格以 [WDCloud API 文档](https://docs.wdcloud.ai)及[实时价格页](https://token.wdcloud.ai/pricing)为准。
+本页记录首版 Quickstart 使用的公开能力。接口、模型和价格以 [WDCloud API 文档](https://docs.wdcloud.ai)及[实时价格页](https://token.wdcloud.ai/pricing?aff=vRW8)为准。
 
 ## 基础信息
 
 | 项目 | 值 |
 | --- | --- |
-| 控制台 | `https://token.wdcloud.ai` |
+| 控制台 | [进入控制台](https://token.wdcloud.ai?aff=vRW8) |
 | Base URL | `https://token.wdcloud.ai` |
 | 鉴权 | 控制台创建的 API Key |
-| 模型目录 | `https://token.wdcloud.ai/pricing` |
+| 模型目录 | [实时价格页](https://token.wdcloud.ai/pricing?aff=vRW8) |
 
 ## 已核验接口
 

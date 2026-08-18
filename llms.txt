@@ -7,9 +7,9 @@ Quickstart version: v0.2.0
 
 ## Canonical links
 
-- Console: https://token.wdcloud.ai
+- Console: [Open console](https://token.wdcloud.ai?aff=vRW8)
 - Registration: [Registration link](https://token.wdcloud.ai/sign-up?aff=vRW8)
-- Live pricing and model catalog: https://token.wdcloud.ai/pricing
+- Live pricing and model catalog: [Live pricing page](https://token.wdcloud.ai/pricing?aff=vRW8)
 - API documentation: https://docs.wdcloud.ai
 
 ## API
