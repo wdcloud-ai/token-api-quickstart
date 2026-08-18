@@ -32,14 +32,72 @@ for script in examples/node/*.mjs; do
 done
 
 echo
+echo "JSON and TOML syntax:"
+python3 - <<'PY'
+import json
+import tomllib
+from pathlib import Path
+
+for path in sorted(Path("examples/tools").rglob("*.json")):
+    json.loads(path.read_text(encoding="utf-8"))
+    print(f"ok {path}")
+
+for path in sorted(Path("examples/tools").rglob("*.toml")):
+    tomllib.loads(path.read_text(encoding="utf-8"))
+    print(f"ok {path}")
+PY
+
+echo
+echo "Xiaohongshu image dimensions:"
+python3 - <<'PY'
+import struct
+from pathlib import Path
+
+asset_dir = Path("docs/social/xiaohongshu/quickstart-launch/assets")
+expected = [
+    "01-cover.png",
+    "02-problem.png",
+    "03-architecture.png",
+    "04-steps.png",
+    "05-code.png",
+    "06-verification.png",
+    "07-safety.png",
+]
+
+for name in expected:
+    path = asset_dir / name
+    header = path.read_bytes()[:24]
+    if header[:8] != b"\x89PNG\r\n\x1a\n":
+        raise SystemExit(f"not a PNG: {path}")
+    width, height = struct.unpack(">II", header[16:24])
+    if (width, height) != (1080, 1440):
+        raise SystemExit(f"unexpected dimensions for {path}: {width}x{height}")
+    print(f"ok {path} {width}x{height}")
+
+preview = Path("docs/assets/repo-social-preview.png")
+header = preview.read_bytes()[:24]
+if header[:8] != b"\x89PNG\r\n\x1a\n":
+    raise SystemExit(f"not a PNG: {preview}")
+width, height = struct.unpack(">II", header[16:24])
+if (width, height) != (1280, 640):
+    raise SystemExit(f"unexpected dimensions for {preview}: {width}x{height}")
+print(f"ok {preview} {width}x{height}")
+PY
+
+echo
 echo "Required product facts:"
 for required in \
   'https://token.wdcloud.ai' \
   'https://docs.wdcloud.ai' \
   '/v1/chat/completions' \
+  '/v1/models' \
+  '/v1/responses' \
   '/v1/messages' \
   '/v1/images/generations' \
   'deepseek-v4-flash' \
+  'ANTHROPIC_BASE_URL' \
+  'model_providers.wdcloud' \
+  'GOOGLE_GEMINI_BASE_URL' \
   'MIT License' \
   'https://token.wdcloud.ai/sign-up?aff=vRW8'; do
   grep -R -F -q -- "$required" README.md README.en.md LICENSE llms.txt docs examples .env.example

@@ -1,69 +1,74 @@
 # WDCloud API Quickstart
 
 [![check](https://github.com/wdcloud-ai/token-api-quickstart/actions/workflows/check.yml/badge.svg)](https://github.com/wdcloud-ai/token-api-quickstart/actions/workflows/check.yml)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-English | [简体中文](README.md)
+English | [简体中文](README.md) · [GitHub](https://github.com/wdcloud-ai/token-api-quickstart) · [Gitee](https://gitee.com/jc1990/token-api-quickstart)
 
-Use one WDCloud API key to access multiple AI model providers through a unified endpoint. This repository contains copy-ready `curl`, Python, and Node.js examples without third-party SDK dependencies.
+**Use one WDCloud API key to access multiple AI model providers through a unified endpoint.** This repository contains copy-ready `curl`, Python, Node.js, Claude Code, Codex CLI, and Gemini CLI examples.
 
-> Current version: v0.1. Facts were last verified on 2026-08-12. Models, routing groups, and prices are dynamic; check the [live pricing page](https://token.wdcloud.ai/pricing) before use.
+> Current version: v0.2. Facts last verified on 2026-08-18. Models, routing groups, tool settings, and prices are dynamic; check the [live pricing page](https://token.wdcloud.ai/pricing) and [official docs](https://docs.wdcloud.ai) before use.
 
-## What is WDCloud?
+![WDCloud API Quickstart: one API key for multiple AI models](docs/assets/repo-social-preview.png)
 
-WDCloud API provides a unified AI API gateway for tools such as Claude Code, Codex, and Gemini CLI. The same console manages API keys, quota, request logs, and model access.
+## Verification status
 
-- Console: <https://token.wdcloud.ai>
-- API documentation: <https://docs.wdcloud.ai>
-- API base URL: `https://token.wdcloud.ai`
-- Referral registration: <https://token.wdcloud.ai/sign-up?aff=vRW8>
-- Providers listed by the public catalog include OpenAI, Anthropic, Alibaba, DeepSeek, Zhipu, Moonshot, and iFlytek.
+| Capability | Status |
+| --- | --- |
+| OpenAI-compatible chat with curl, Python, and Node.js | ✅ Live-tested with the domestic models group |
+| Default chat model `deepseek-v4-flash` | ✅ Live-tested on 2026-08-12 |
+| Claude Code, Codex CLI, and Gemini CLI settings | ✅ Docs-verified and statically checked; ⚠️ live sessions pending |
+| Anthropic Messages, Responses API, and image generation | ✅ Statically checked; ⚠️ matching model groups required |
 
-This project uses an approved referral URL. WDCloud records its attribution with the `aff` query parameter:
-
-```text
-https://token.wdcloud.ai/sign-up?aff=vRW8
-```
-
-Use the complete URL above when registering from this project so that the source is attributed correctly.
-
-## Quick start
+## Three-minute quickstart
 
 The examples require `curl`, Python 3, or Node.js 18+ with native `fetch` support.
 
-1. Register through the [referral link](https://token.wdcloud.ai/sign-up?aff=vRW8), then sign in to the WDCloud console.
-2. Create an API key and confirm that the account has access to the `国内模型` (domestic models) group. Separate keys per tool make usage easier to trace and revoke.
-3. Export your key and preferred model without committing either to Git:
+1. Create an API key in the [WDCloud console](https://token.wdcloud.ai) and confirm access to the domestic models group.
+2. Export your key and model without committing them to Git:
 
 ```bash
 export WDCLOUD_API_KEY="your API key"
 export WDCLOUD_MODEL="deepseek-v4-flash"
 ```
 
-4. Run the chat example:
+3. Run the chat example:
 
 ```bash
 bash examples/curl/chat-completions.sh
 ```
 
-## Examples
+## AI coding tools
 
-| Example | File | Endpoint |
+| Tool | Copy-ready settings | Official guide |
 | --- | --- | --- |
-| OpenAI-compatible chat | [`examples/curl/chat-completions.sh`](examples/curl/chat-completions.sh) | ✅ Live-tested with the domestic models group |
-| Python chat | [`examples/python/chat_completions.py`](examples/python/chat_completions.py) | ✅ Live-tested with the domestic models group |
-| Node.js chat | [`examples/node/chat-completions.mjs`](examples/node/chat-completions.mjs) | ✅ Live-tested with the domestic models group |
-| Anthropic Messages | [`examples/curl/anthropic-messages.sh`](examples/curl/anthropic-messages.sh) | ⚠️ Requires a Claude-enabled group; not live-tested yet |
-| OpenAI-compatible image generation | [`examples/curl/image-generation.sh`](examples/curl/image-generation.sh) | ⚠️ Requires an image-enabled group; not live-tested yet |
+| Claude Code | [`examples/tools/claude-code/`](examples/tools/claude-code/) | [Guide](https://docs.wdcloud.ai/tools/claude-code) |
+| Codex CLI | [`examples/tools/codex/`](examples/tools/codex/) | [Guide](https://docs.wdcloud.ai/tools/codex) |
+| Gemini CLI | [`examples/tools/gemini-cli/`](examples/tools/gemini-cli/) | [Guide](https://docs.wdcloud.ai/tools/gemini-cli) |
 
-See [`docs/api-and-tools.md`](docs/api-and-tools.md) for endpoints and tool integration links.
+See [`docs/tool-setup.md`](docs/tool-setup.md) for install locations, setup steps, and verification boundaries. Create a separate key for each tool to isolate usage and revocation.
+
+## API examples
+
+| Example | File | Notes |
+| --- | --- | --- |
+| OpenAI-compatible chat | [`examples/curl/chat-completions.sh`](examples/curl/chat-completions.sh) | ✅ Live-tested |
+| Python chat | [`examples/python/chat_completions.py`](examples/python/chat_completions.py) | ✅ Live-tested |
+| Node.js chat | [`examples/node/chat-completions.mjs`](examples/node/chat-completions.mjs) | ✅ Live-tested |
+| List available models | [`examples/curl/list-models.sh`](examples/curl/list-models.sh) | Checks the key's model group |
+| OpenAI Responses | [`examples/curl/responses.sh`](examples/curl/responses.sh) | ⚠️ Requires a matching group |
+| Anthropic Messages | [`examples/curl/anthropic-messages.sh`](examples/curl/anthropic-messages.sh) | ⚠️ Requires a Claude-enabled group |
+| Image generation | [`examples/curl/image-generation.sh`](examples/curl/image-generation.sh) | ⚠️ Requires an image-enabled group |
+
+See [`docs/troubleshooting.md`](docs/troubleshooting.md) when model listing is empty, authentication fails, or a channel is unavailable.
 
 ## Safety and billing
 
 - Never paste a real API key into issues, logs, screenshots, or commits.
-- API requests may incur charges. The repository checks are static and never call a model.
-- Confirm the selected model and current price on the [live pricing page](https://token.wdcloud.ai/pricing).
+- Do not commit `.env`, `auth.json`, or tool settings containing a real key.
+- API requests may incur charges. Repository checks never call a model.
+- Confirm the current model, routing group, and price before use.
 - Revoke and replace any exposed key immediately.
-- If `/v1/models` is empty or a request reports `No available channel`, verify the model group assigned to the API key's account.
 
 Run local checks with:
 
@@ -71,7 +76,8 @@ Run local checks with:
 bash scripts/check.sh
 ```
 
-## Feedback and license
+## Registration disclosure
 
-- Questions and suggestions: [GitHub Issues](https://github.com/wdcloud-ai/token-api-quickstart/issues)
-- License: [MIT](LICENSE)
+If you choose to register through this project, use the [project registration link](https://token.wdcloud.ai/sign-up?aff=vRW8). It contains `aff=vRW8` for source attribution. This repository does not infer or promise undisclosed attribution periods, revenue-sharing rules, SLAs, refund terms, or long-term model availability.
+
+Questions and suggestions: [GitHub Issues](https://github.com/wdcloud-ai/token-api-quickstart/issues). License: [MIT](LICENSE).

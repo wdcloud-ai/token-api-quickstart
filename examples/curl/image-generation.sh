@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Requires an account with access to an image-enabled model group.
-# This example was statically checked but not live-tested for v0.1.
+# This example was statically checked but not live-tested for v0.2.
 : "${WDCLOUD_API_KEY:?Set WDCLOUD_API_KEY before running this example}"
 
 base_url="${WDCLOUD_BASE_URL:-https://token.wdcloud.ai}"

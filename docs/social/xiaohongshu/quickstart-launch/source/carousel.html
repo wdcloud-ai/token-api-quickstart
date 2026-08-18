@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WDCloud API Quickstart 小红书图文</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1440px; overflow: hidden; }
+      body {
+        font-family: "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", sans-serif;
+        color: #f8fbff;
+        background: #03112d;
+      }
+      .card {
+        width: 1080px;
+        height: 1440px;
+        padding: 76px 72px 62px;
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 82% 15%, rgba(0, 194, 255, .18), transparent 30%),
+          radial-gradient(circle at 5% 85%, rgba(52, 96, 255, .20), transparent 36%),
+          linear-gradient(145deg, #061b42 0%, #020a1e 100%);
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: .16;
+        background-image:
+          linear-gradient(rgba(117, 188, 255, .35) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(117, 188, 255, .35) 1px, transparent 1px);
+        background-size: 64px 64px;
+        pointer-events: none;
+      }
+      .content { position: relative; z-index: 2; height: 100%; }
+      .brand { display: flex; align-items: center; justify-content: space-between; font-size: 24px; letter-spacing: .05em; color: #9ddcff; }
+      .badge { padding: 12px 20px; border: 1px solid rgba(135, 218, 255, .5); border-radius: 999px; background: rgba(4, 28, 67, .7); font-size: 20px; }
+      .kicker { margin-top: 82px; color: #4bd8ff; font-size: 28px; font-weight: 700; letter-spacing: .12em; }
+      h1 { margin: 22px 0 28px; max-width: 900px; font-size: 78px; line-height: 1.14; letter-spacing: -.035em; }
+      h2 { margin: 32px 0 24px; font-size: 58px; line-height: 1.2; letter-spacing: -.025em; }
+      .lead { max-width: 860px; font-size: 32px; line-height: 1.6; color: #c7ddf6; }
+      .accent { color: #57ddff; }
+      .footer { position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: center; color: #8db4dd; font-size: 22px; }
+      .page { font-variant-numeric: tabular-nums; }
+      .stack { display: grid; gap: 22px; margin-top: 48px; }
+      .panel { padding: 28px 32px; border: 1px solid rgba(118, 201, 255, .25); border-radius: 24px; background: rgba(6, 30, 72, .72); box-shadow: 0 20px 60px rgba(0, 0, 0, .18); }
+      .panel strong { display: block; margin-bottom: 8px; font-size: 30px; }
+      .panel span { font-size: 25px; line-height: 1.55; color: #bcd4ee; }
+      .number { display: inline-flex; width: 52px; height: 52px; margin-right: 18px; align-items: center; justify-content: center; border-radius: 16px; background: #1687ff; font-size: 27px; font-weight: 800; }
+      .flow { display: grid; grid-template-columns: 1fr 90px 1.15fr 90px 1fr; align-items: center; margin-top: 120px; }
+      .node { min-height: 220px; padding: 30px 22px; display: flex; flex-direction: column; justify-content: center; text-align: center; border: 1px solid rgba(109, 210, 255, .45); border-radius: 30px; background: rgba(8, 37, 85, .86); }
+      .node b { font-size: 34px; }
+      .node small { margin-top: 15px; font-size: 22px; color: #9fc2e3; line-height: 1.45; }
+      .arrow { text-align: center; color: #44d9ff; font-size: 54px; }
+      .models { display: grid; gap: 12px; }
+      .model { padding: 15px 12px; border-radius: 15px; background: rgba(15, 112, 208, .3); font-size: 22px; text-align: center; }
+      pre { margin: 70px 0 0; padding: 42px; border: 1px solid rgba(94, 210, 255, .35); border-radius: 28px; overflow: hidden; background: #020a18; color: #e8f5ff; font: 23px/1.7 Menlo, Monaco, monospace; white-space: pre-wrap; box-shadow: 0 24px 70px rgba(0, 0, 0, .32); }
+      .code-blue { color: #54dfff; }
+      .check-grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 48px; }
+      .check { display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 26px 30px; border-radius: 22px; background: rgba(5, 29, 68, .76); border: 1px solid rgba(117, 198, 255, .23); }
+      .icon { width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 26px; font-weight: 900; }
+      .done { background: #0ecb91; color: #001c16; }
+      .pending { background: #ffd166; color: #382600; }
+      .check b { display: block; font-size: 29px; margin-bottom: 6px; }
+      .check p { margin: 0; color: #b9d1eb; font-size: 23px; line-height: 1.5; }
+      .warning { margin-top: 74px; padding: 38px; border-radius: 28px; background: linear-gradient(135deg, rgba(9, 71, 142, .9), rgba(6, 34, 82, .9)); border: 1px solid rgba(91, 208, 255, .4); }
+      .warning b { display: block; font-size: 34px; margin-bottom: 18px; }
+      .warning p { margin: 10px 0; font-size: 25px; line-height: 1.55; color: #c6ddf3; }
+      .project { margin-top: 70px; padding: 26px 32px; border-radius: 20px; background: #eef9ff; color: #04224b; font: 700 30px/1.4 Menlo, Monaco, monospace; }
+      .cover { background-image: linear-gradient(180deg, rgba(1, 13, 39, .15), rgba(1, 8, 24, .18)), url("../assets/background-api-gateway.png"); background-size: cover; background-position: center; }
+      .cover::after { display: none; }
+      .cover h1 { margin-top: 48px; max-width: 880px; font-size: 86px; text-shadow: 0 8px 30px rgba(0, 0, 0, .55); }
+      .cover .lead { max-width: 780px; color: #d7ecff; text-shadow: 0 4px 20px rgba(0, 0, 0, .7); }
+      .cover .chips { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+      .cover .chips span { padding: 12px 19px; border-radius: 999px; background: rgba(2, 22, 57, .72); border: 1px solid rgba(122, 215, 255, .4); font-size: 22px; }
+    </style>
+  </head>
+  <body>
+    <main id="root"></main>
+    <script>
+      const page = Math.min(7, Math.max(1, Number(new URLSearchParams(location.search).get("page")) || 1));
+      const header = `<div class="brand"><b>WDCloud API</b><span class="badge">官方开源模板</span></div>`;
+      const footer = `<div class="footer"><span>token-api-quickstart</span><span class="page">0${page} / 07</span></div>`;
+      const pages = {
+        1: `<section class="card cover"><div class="content">${header}<div class="kicker">AI API QUICKSTART</div><h1>一个 API Key<br><span class="accent">调用多家 AI 模型</span></h1><p class="lead">curl · Python · Node.js<br>Claude Code · Codex · Gemini CLI</p><div class="chips"><span>3 分钟上手</span><span>配置可复制</span><span>密钥不入库</span></div>${footer}</div></section>`,
+        2: `<section class="card"><div class="content">${header}<div class="kicker">WHY WE BUILT IT</div><h2>接入模型时，时间都花在哪？</h2><div class="stack"><div class="panel"><strong>重复配置</strong><span>不同工具反复填写 Base URL、API Key 和模型名称。</span></div><div class="panel"><strong>权限不清楚</strong><span>同一个模型名称，在不同分组里可能拥有不同访问权限。</span></div><div class="panel"><strong>示例过于复杂</strong><span>只是想验证接口，却要先安装 SDK、创建项目、处理依赖。</span></div><div class="panel"><strong>真实边界模糊</strong><span>文档支持不等于已经实测，排错时容易走弯路。</span></div></div>${footer}</div></section>`,
+        3: `<section class="card"><div class="content">${header}<div class="kicker">ONE GATEWAY</div><h2>统一入口，分工具管理 Key</h2><p class="lead">一个控制台管理额度、调用日志和模型访问；每个工具使用独立 Key，更方便统计和停用。</p><div class="flow"><div class="node"><b>你的应用</b><small>curl<br>Python<br>Node.js</small></div><div class="arrow">→</div><div class="node"><b>WDCloud API</b><small>统一 Base URL<br>独立 API Key<br>调用日志</small></div><div class="arrow">→</div><div class="models"><div class="model">OpenAI</div><div class="model">Anthropic</div><div class="model">DeepSeek</div><div class="model">更多模型</div></div></div>${footer}</div></section>`,
+        4: `<section class="card"><div class="content">${header}<div class="kicker">3-MINUTE START</div><h2>从 Key 到第一条响应，只要 3 步</h2><div class="stack"><div class="panel"><strong><span class="number">1</span>创建 API Key</strong><span>在控制台确认账号和 Key 拥有需要的模型分组。</span></div><div class="panel"><strong><span class="number">2</span>设置环境变量</strong><span>Key 不写进代码，也不要出现在截图和提交记录中。</span></div><div class="panel"><strong><span class="number">3</span>运行示例</strong><span>执行 curl、Python 或 Node.js 示例，查看 JSON 响应。</span></div></div><div class="project">bash examples/curl/chat-completions.sh</div>${footer}</div></section>`,
+        5: `<section class="card"><div class="content">${header}<div class="kicker">COPY & RUN</div><h2>最小请求，复制就能改</h2><pre><span class="code-blue">curl</span> https://token.wdcloud.ai/v1/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer \${WDCLOUD_API_KEY}" \\
+  -d '{
+    "model": "deepseek-v4-flash",
+    "messages": [{
+      "role": "user",
+      "content": "请只回复：连接成功"
+    }]
+  }'</pre><p class="lead" style="margin-top:38px">仓库同时提供 Python、Node.js、Responses API、Claude Messages 和图片生成示例。</p>${footer}</div></section>`,
+        6: `<section class="card"><div class="content">${header}<div class="kicker">VERIFICATION FIRST</div><h2>哪些已实测？哪些还在验证？</h2><div class="check-grid"><div class="check"><span class="icon done">✓</span><div><b>已真实调用</b><p>国内模型分组下的 OpenAI 兼容聊天；curl、Python、Node.js。</p></div></div><div class="check"><span class="icon done">✓</span><div><b>已静态检查</b><p>工具配置、JSON/TOML 语法、关键端点和疑似密钥。</p></div></div><div class="check"><span class="icon pending">!</span><div><b>待真实会话实测</b><p>Claude Code、Codex、Gemini CLI，需要对应专用分组令牌。</p></div></div><div class="check"><span class="icon pending">!</span><div><b>需要对应模型分组</b><p>Responses API、Anthropic Messages 和图片生成。</p></div></div></div>${footer}</div></section>`,
+        7: `<section class="card"><div class="content">${header}<div class="kicker">SAFE BY DEFAULT</div><h2>先保护 Key，再开始调用</h2><div class="warning"><b>三个不要</b><p>不要把真实 Key 提交到 Git。</p><p>不要在 Issue、日志或截图中暴露完整 Key。</p><p>不要对失败请求进行无限重试。</p></div><div class="project">项目名：token-api-quickstart</div><p class="lead" style="margin-top:44px">下一篇想先看哪一个完整实测？<br><span class="accent">Claude Code / Codex / Gemini CLI</span></p>${footer}</div></section>`
+      };
+      document.getElementById("root").innerHTML = pages[page];
+    </script>
+  </body>
+</html>
