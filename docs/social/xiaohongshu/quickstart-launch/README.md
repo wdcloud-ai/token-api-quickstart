@@ -35,7 +35,11 @@
 
 项目名：`token-api-quickstart`
 
-GitHub、Gitee 已同步。搜索“WDCloud 官方 API 项目”或完整项目名，即可找到官方仓库。
+GitHub：[查看官方仓库](https://github.com/wdcloud-ai/token-api-quickstart)
+
+Gitee：[查看国内镜像](https://gitee.com/jc1990/token-api-quickstart)
+
+注册地址：[立即注册](https://token.wdcloud.ai/sign-up?aff=vRW8)
 
 你最想先看哪个工具的完整实测？
 
@@ -61,7 +65,7 @@ GitHub、Gitee 已同步。搜索“WDCloud 官方 API 项目”或完整项目�
 - 发布前再次核对默认模型和实时价格页。
 - 截图、评论和私信中不要出现真实 API Key。
 - 不使用“最低价”“最稳定”“无限量”等无法持续核验的绝对化表述。
-- 正文不放站外 URL、二维码或“私信领取”等导流话术；如需承接注册，使用官方账号可用且经平台审核的站内组件。
+- 正文可提供 GitHub、Gitee 和注册地址；注册地址必须保留邀请码 `aff=vRW8`。
 - 首条评论可补充本次更新范围，但不要用奖励或资料领取诱导互动。
 
 ## 后续选题
