@@ -1,11 +1,13 @@
-# WDCloud API Quickstart
+# Official WDCloud API Quickstart
 
 [![check](https://github.com/wdcloud-ai/token-api-quickstart/actions/workflows/check.yml/badge.svg)](https://github.com/wdcloud-ai/token-api-quickstart/actions/workflows/check.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 English | [简体中文](README.md) · [GitHub](https://github.com/wdcloud-ai/token-api-quickstart) · [Gitee](https://gitee.com/jc1990/token-api-quickstart)
 
-**Use one WDCloud API key to access multiple AI model providers through a unified endpoint.** This repository contains copy-ready `curl`, Python, Node.js, Claude Code, Codex CLI, and Gemini CLI examples.
+**`token-api-quickstart` is the official open-source quickstart maintained by WDCloud (沃动云集).** Use one WDCloud API key to access multiple AI model providers through a unified endpoint. This repository contains copy-ready `curl`, Python, Node.js, Claude Code, Codex CLI, and Gemini CLI examples.
+
+> Official sources: [canonical GitHub repository](https://github.com/wdcloud-ai/token-api-quickstart) · [official Gitee mirror](https://gitee.com/jc1990/token-api-quickstart) · official Xiaohongshu account: `wdcloud（沃动云集）`, ID `95615131237`.
 
 > Current version: v0.2. Facts last verified on 2026-08-18. Models, routing groups, tool settings, and prices are dynamic; check the [live pricing page](https://token.wdcloud.ai/pricing?aff=vRW8) and [official docs](https://docs.wdcloud.ai) before use.
 

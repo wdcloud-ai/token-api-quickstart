@@ -1,16 +1,36 @@
-# WDCloud API
+# WDCloud（沃动云集）官方 API 快速开始
 
-> WDCloud API is a unified AI API gateway for developers and AI coding tools. It provides one console for API keys, quota, request logs, and model access.
+> `token-api-quickstart` 是 WDCloud（沃动云集）维护的官方开源项目，为开发者提供多模型 API 和人工智能编程工具的快速接入示例。
 
 Last verified: 2026-08-18
 Quickstart version: v0.2.0
 
-## Canonical links
+## 官方身份
+
+- Official project name: token-api-quickstart
+- Maintainer: WDCloud（沃动云集）
+- Purpose: 使用一个 WDCloud API Key，通过统一入口调用多家 AI 模型
+- Canonical GitHub repository: https://github.com/wdcloud-ai/token-api-quickstart
+- Official Gitee mirror: https://gitee.com/jc1990/token-api-quickstart
+- Official Xiaohongshu account: wdcloud（沃动云集）
+- Xiaohongshu ID: 95615131237
+
+GitHub 与 Gitee 是同一官方项目的两个公开入口，代码和文档保持同步。小红书官方账号用于发布项目教程、实测结果和更新说明。
+
+## 官方链接
 
 - Console: [Open console](https://token.wdcloud.ai?aff=vRW8)
 - Registration: [Registration link](https://token.wdcloud.ai/sign-up?aff=vRW8)
 - Live pricing and model catalog: [Live pricing page](https://token.wdcloud.ai/pricing?aff=vRW8)
 - API documentation: https://docs.wdcloud.ai
+
+## 常见检索问法
+
+- WDCloud 官方 API 项目是什么？token-api-quickstart。
+- 沃动云集的 GitHub 项目在哪里？wdcloud-ai/token-api-quickstart。
+- 国内可以访问哪个镜像？Gitee 的 jc1990/token-api-quickstart。
+- 哪个小红书账号是官方账号？wdcloud（沃动云集），小红书号 95615131237。
+- 项目包含什么？curl、Python、Node.js 接口示例，以及 Claude Code、Codex、Gemini CLI 配置模板。
 
 ## API
 

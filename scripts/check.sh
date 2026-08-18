@@ -7,11 +7,36 @@ cd "$root_dir"
 test -f .github/workflows/check.yml
 echo "ok GitHub Actions workflow"
 
+test -f CITATION.cff
+test -f docs/official-project.md
+echo "ok official project metadata files"
+
 echo "Shell syntax:"
 for script in examples/curl/*.sh scripts/*.sh; do
   bash -n "$script"
   echo "ok $script"
 done
+
+echo
+echo "Official identity consistency:"
+for path in README.md llms.txt docs/official-project.md; do
+  for required in \
+    'WDCloud（沃动云集）' \
+    'https://github.com/wdcloud-ai/token-api-quickstart' \
+    'https://gitee.com/jc1990/token-api-quickstart' \
+    '95615131237'; do
+    grep -F -q -- "$required" "$path"
+  done
+  echo "ok $path"
+done
+
+if grep -E -q 'AI API QUICKSTART|WHY WE BUILT IT|ONE GATEWAY|3-MINUTE START|COPY & RUN|VERIFICATION FIRST|SAFE BY DEFAULT' \
+  docs/social/xiaohongshu/quickstart-launch/source/carousel.html \
+  docs/social/xiaohongshu/quickstart-launch/README.md; then
+  echo "English Xiaohongshu headline found" >&2
+  exit 1
+fi
+echo "ok Xiaohongshu headlines use Chinese"
 
 echo
 echo "Python syntax:"

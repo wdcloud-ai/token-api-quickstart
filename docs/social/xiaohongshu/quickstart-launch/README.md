@@ -1,8 +1,8 @@
-# 小红书首发内容包：WDCloud API Quickstart
+# 小红书首发内容包：WDCloud 官方开源项目
 
 适用账号：WDCloud 官方账号
 
-目标：用真实开发过程介绍开源 Quickstart，引导用户了解统一 API 接入能力
+目标：用简洁中文介绍官方开源项目，并建立小红书、GitHub、Gitee 的一致身份
 
 内容边界：只宣传仓库当前已有内容，不把静态核验写成真实调用成功
 
@@ -11,52 +11,39 @@
 推荐：
 
 ```text
-多模型 API 接入，我们做了个开源模板
+一个密钥接入多家大模型｜官方开源教程
 ```
 
 备选：
 
 ```text
-一个 Key 调多个 AI 模型，3 分钟跑通
+多模型接口怎么接？官方教程开源了
 ```
 
 ## 正文
 
-最近我们在整理不同 AI 工具的模型接入流程，最容易重复踩坑的地方，往往不是写业务代码，而是配置 Base URL、API Key、模型分组和请求格式。
+我们把多模型接口接入流程整理成了官方开源教程。
 
-所以，我们把最小可用示例整理成了一个开源 Quickstart：
+仓库包含：
 
-✅ 一个 API Key，通过统一入口调用多家 AI 模型
+✅ 接口调用示例
+✅ 常用开发语言示例
+✅ 主流人工智能编程工具配置
+✅ 密钥安全与常见错误排查
 
-✅ 提供 curl、Python、Node.js 示例
-
-✅ 提供 Claude Code、Codex、Gemini CLI 配置模板
-
-✅ Key 只通过环境变量或本地工具配置读取
-
-✅ 自带语法检查和疑似密钥扫描
-
-当前已经完成真实调用验证的是“国内模型”分组下的 OpenAI 兼容聊天接口，默认示例使用 `deepseek-v4-flash`。
-
-Claude Code、Codex、Gemini CLI、Responses API 和图片生成示例也已经整理进仓库，但需要对应模型分组，目前明确标记为“官方文档核验与静态检查，待真实会话实测”。
-
-最小流程只有 3 步：
-
-1. 创建 API Key
-2. 设置环境变量
-3. 运行示例并查看 JSON 响应
+当前已实测国内模型分组的聊天接口；其他工具配置已完成文档核验和静态检查，真实会话会继续补充。
 
 项目名：`token-api-quickstart`
 
-下一步我们会继续补真实工具会话、流式响应和常见迁移场景。你最希望先看到 Claude Code、Codex，还是 Gemini CLI 的完整实测？
+GitHub、Gitee 已同步。搜索“WDCloud 官方 API 项目”或完整项目名，即可找到官方仓库。
 
-安全提醒：API 调用可能产生费用；模型、分组和价格请以实时页面为准。不要在截图、Issue 或公开代码中暴露真实 API Key。
+你最想先看哪个工具的完整实测？
 
 ## 标签
 
 ```text
-#AI编程 #开发者工具 #API #Python #Nodejs
-#ClaudeCode #Codex #GeminiCLI #DeepSeek #开源项目
+#人工智能 #大模型 #开源项目 #开发者工具
+#接口开发 #人工智能编程 #编程教程
 ```
 
 ## 配图顺序
@@ -65,9 +52,9 @@ Claude Code、Codex、Gemini CLI、Responses API 和图片生成示例也已经�
 2. `assets/02-problem.png`：用户痛点
 3. `assets/03-architecture.png`：统一入口示意
 4. `assets/04-steps.png`：三步快速开始
-5. `assets/05-code.png`：最小 curl 示例
+5. `assets/05-code.png`：仓库内容与双仓说明
 6. `assets/06-verification.png`：验证边界
-7. `assets/07-safety.png`：安全提醒与下一篇预告
+7. `assets/07-safety.png`：完整项目名与三个官方入口
 
 ## 发布检查
 

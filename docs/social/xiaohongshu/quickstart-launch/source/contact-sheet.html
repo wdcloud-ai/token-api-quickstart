@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小红书轮播图预览</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1120px; height: 744px; overflow: hidden; }
+      body {
+        padding: 24px;
+        background: #07111f;
+        color: #eaf2ff;
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      h1 { margin: 0 0 18px; font-size: 26px; }
+      .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+      figure { margin: 0; }
+      img { display: block; width: 100%; border: 1px solid #26405f; border-radius: 10px; }
+      figcaption { margin-top: 8px; text-align: center; color: #a8bdd5; font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <h1>WDCloud 官方项目｜小红书中文轮播图</h1>
+    <div class="grid">
+      <figure><img src="../assets/01-cover.png" alt="封面"><figcaption>01 封面</figcaption></figure>
+      <figure><img src="../assets/02-problem.png" alt="接入问题"><figcaption>02 问题</figcaption></figure>
+      <figure><img src="../assets/03-architecture.png" alt="统一入口"><figcaption>03 入口</figcaption></figure>
+      <figure><img src="../assets/04-steps.png" alt="三步开始"><figcaption>04 步骤</figcaption></figure>
+      <figure><img src="../assets/05-code.png" alt="双仓同步"><figcaption>05 双仓</figcaption></figure>
+      <figure><img src="../assets/06-verification.png" alt="验证边界"><figcaption>06 验证</figcaption></figure>
+      <figure><img src="../assets/07-safety.png" alt="官方入口"><figcaption>07 官方</figcaption></figure>
+    </div>
+  </body>
+</html>

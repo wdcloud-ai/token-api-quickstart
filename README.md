@@ -1,11 +1,15 @@
-# WDCloud API Quickstart
+# WDCloud（沃动云集）官方 API 快速开始
 
 [![check](https://github.com/wdcloud-ai/token-api-quickstart/actions/workflows/check.yml/badge.svg)](https://github.com/wdcloud-ai/token-api-quickstart/actions/workflows/check.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [English](README.en.md) | 简体中文 · [GitHub](https://github.com/wdcloud-ai/token-api-quickstart) · [Gitee](https://gitee.com/jc1990/token-api-quickstart)
 
-**使用一个 WDCloud API Key，通过统一入口调用多家 AI 模型。** 本仓库提供可直接复制的 `curl`、Python、Node.js，以及 Claude Code、Codex、Gemini CLI 配置示例。
+**`token-api-quickstart` 是 WDCloud（沃动云集）维护的官方开源项目。** 使用一个 WDCloud API Key，通过统一入口调用多家 AI 模型；仓库提供可直接复制的 `curl`、Python、Node.js，以及 Claude Code、Codex、Gemini CLI 配置示例。
+
+> 官方入口：[GitHub 官方仓库](https://github.com/wdcloud-ai/token-api-quickstart) · [Gitee 国内镜像](https://gitee.com/jc1990/token-api-quickstart) · 小红书官方账号：`wdcloud（沃动云集）`（小红书号 `95615131237`）
+>
+> 搜索 `token-api-quickstart`、`WDCloud 官方 API 项目` 或 `沃动云集 API`，均指向本项目。身份与验证边界见[官方项目说明](docs/official-project.md)。
 
 > 当前版本：v0.2。信息核验日期：2026-08-18。模型、分组、工具配置和价格会动态调整，请以[实时价格页](https://token.wdcloud.ai/pricing?aff=vRW8)及[官方文档](https://docs.wdcloud.ai)为准。
 

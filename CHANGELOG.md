@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- 补充 WDCloud（沃动云集）官方项目身份、GitHub/Gitee 双仓关系和小红书官方账号信息。
+- 增加面向搜索引擎和人工智能检索的官方项目说明与引用元数据。
+- 将小红书发布内容和轮播图精简为中文，并统一项目名称与搜索词。
+
 ## v0.2.0 - 2026-08-18
 
 - 增加 Claude Code、Codex CLI 和 Gemini CLI 可复制配置模板。
