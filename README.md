@@ -7,11 +7,15 @@
 
 **`token-api-quickstart` 是 WDCloud（沃动云集）维护的官方开源项目。** 使用一个 WDCloud API Key，通过统一入口调用多家 AI 模型；仓库提供可直接复制的 `curl`、Python、Node.js，以及 Claude Code、Codex、Gemini CLI 配置示例。
 
+## 🚀 [立即注册并创建 API Key →](https://token.wdcloud.ai/sign-up?aff=vRW8)
+
+注册后可在控制台创建密钥，并查看当前可用模型、分组和价格。
+
 > 官方入口：[GitHub 官方仓库](https://github.com/wdcloud-ai/token-api-quickstart) · [Gitee 国内镜像](https://gitee.com/jc1990/token-api-quickstart) · 小红书官方账号：`wdcloud（沃动云集）`（小红书号 `95615131237`）
 >
 > 搜索 `token-api-quickstart`、`WDCloud 官方 API 项目` 或 `沃动云集 API`，均指向本项目。身份与验证边界见[官方项目说明](docs/official-project.md)。
 
-> 当前版本：v0.2。信息核验日期：2026-08-18。模型、分组、工具配置和价格会动态调整，请以[实时价格页](https://token.wdcloud.ai/pricing?aff=vRW8)及[官方文档](https://docs.wdcloud.ai)为准。
+> 当前版本：v0.2。信息核验日期：2026-08-18。模型、分组、工具配置和价格会动态调整，请通过[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)进入平台，并在注册后的控制台查看实时信息；API 说明以[官方文档](https://docs.wdcloud.ai)为准。
 
 ![WDCloud API Quickstart：一个 API Key 调用多家 AI 模型](docs/assets/repo-social-preview.png)
 
@@ -45,7 +49,7 @@
 
 需要 `curl`、Python 3，或支持原生 `fetch` 的 Node.js 18 及以上版本。
 
-1. 通过[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)创建账号，再在 WDCloud 控制台创建 API Key，并确认账号拥有“国内模型”分组权限。
+1. [立即注册并创建 API Key](https://token.wdcloud.ai/sign-up?aff=vRW8)，并确认账号拥有“国内模型”分组权限。
 2. 在当前终端设置环境变量，不要把真实 Key 写入代码：
 
 ```bash
@@ -120,7 +124,7 @@ bash examples/curl/list-models.sh
 
 WDCloud API 是统一 AI API 接入平台，为 Claude Code、Codex、Gemini CLI 等 AI 编程工具提供服务。用户可在同一个控制台管理 API Key、额度、调用日志和模型访问。
 
-- [控制台](https://token.wdcloud.ai?aff=vRW8)
+- [立即注册并进入平台](https://token.wdcloud.ai/sign-up?aff=vRW8)
 - API 文档：<https://docs.wdcloud.ai>
 - API Base URL：`https://token.wdcloud.ai`
 - 主要厂商：OpenAI、Anthropic、阿里巴巴、DeepSeek、智谱、Moonshot、讯飞等
@@ -143,8 +147,8 @@ bash scripts/check.sh
 
 后续计划见 [`docs/roadmap.md`](docs/roadmap.md)。问题与建议可提交到 [GitHub Issues](https://github.com/wdcloud-ai/token-api-quickstart/issues)。
 
-## 注册链接
+## 立即注册
 
-[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)
+[立即注册并创建 API Key →](https://token.wdcloud.ai/sign-up?aff=vRW8)
 
 本项目采用 [MIT License](LICENSE)。

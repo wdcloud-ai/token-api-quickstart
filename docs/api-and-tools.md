@@ -1,15 +1,15 @@
 # API 与工具接入索引
 
-本页记录首版 Quickstart 使用的公开能力。接口、模型和价格以 [WDCloud API 文档](https://docs.wdcloud.ai)及[实时价格页](https://token.wdcloud.ai/pricing?aff=vRW8)为准。
+本页记录首版 Quickstart 使用的公开能力。请通过[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)进入平台，并在注册后的控制台查看当前模型和价格；接口说明以 [WDCloud API 文档](https://docs.wdcloud.ai)为准。
 
 ## 基础信息
 
 | 项目 | 值 |
 | --- | --- |
-| 控制台 | [进入控制台](https://token.wdcloud.ai?aff=vRW8) |
+| 平台入口 | [立即注册并进入平台](https://token.wdcloud.ai/sign-up?aff=vRW8) |
 | Base URL | `https://token.wdcloud.ai` |
 | 鉴权 | 控制台创建的 API Key |
-| 模型目录 | [实时价格页](https://token.wdcloud.ai/pricing?aff=vRW8) |
+| 模型目录 | 注册后在控制台查看 |
 
 ## 已核验接口
 
@@ -43,6 +43,6 @@
 
 v0.2 默认使用 `deepseek-v4-flash`，需要账号拥有“国内模型”分组权限。如果模型列表为空或出现 `No available channel`，应先检查账号或 API Key 对应的模型分组。
 
-## 注册链接
+## 立即注册
 
-[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)
+[立即注册并创建 API Key →](https://token.wdcloud.ai/sign-up?aff=vRW8)

@@ -7,9 +7,13 @@ English | [简体中文](README.md) · [GitHub](https://github.com/wdcloud-ai/to
 
 **`token-api-quickstart` is the official open-source quickstart maintained by WDCloud (沃动云集).** Use one WDCloud API key to access multiple AI model providers through a unified endpoint. This repository contains copy-ready `curl`, Python, Node.js, Claude Code, Codex CLI, and Gemini CLI examples.
 
+## 🚀 [Create an account and API key →](https://token.wdcloud.ai/sign-up?aff=vRW8)
+
+After registration, use the console to create a key and view current models, routing groups, and prices.
+
 > Official sources: [canonical GitHub repository](https://github.com/wdcloud-ai/token-api-quickstart) · [official Gitee mirror](https://gitee.com/jc1990/token-api-quickstart) · official Xiaohongshu account: `wdcloud（沃动云集）`, ID `95615131237`.
 
-> Current version: v0.2. Facts last verified on 2026-08-18. Models, routing groups, tool settings, and prices are dynamic; check the [live pricing page](https://token.wdcloud.ai/pricing?aff=vRW8) and [official docs](https://docs.wdcloud.ai) before use.
+> Current version: v0.2. Facts last verified on 2026-08-18. Models, routing groups, tool settings, and prices are dynamic; enter the platform through the [registration link](https://token.wdcloud.ai/sign-up?aff=vRW8), then check the console for current information. See the [official docs](https://docs.wdcloud.ai) for API details.
 
 ![WDCloud API Quickstart: one API key for multiple AI models](docs/assets/repo-social-preview.png)
 
@@ -26,7 +30,7 @@ English | [简体中文](README.md) · [GitHub](https://github.com/wdcloud-ai/to
 
 The examples require `curl`, Python 3, or Node.js 18+ with native `fetch` support.
 
-1. Create an account through the [registration link](https://token.wdcloud.ai/sign-up?aff=vRW8), then create an API key in the WDCloud console and confirm access to the domestic models group.
+1. [Create an account and API key](https://token.wdcloud.ai/sign-up?aff=vRW8), then confirm access to the domestic models group.
 2. Export your key and model without committing them to Git:
 
 ```bash
@@ -78,8 +82,8 @@ Run local checks with:
 bash scripts/check.sh
 ```
 
-## Registration link
+## Get started
 
-[Registration link](https://token.wdcloud.ai/sign-up?aff=vRW8)
+[Create an account and API key →](https://token.wdcloud.ai/sign-up?aff=vRW8)
 
 Questions and suggestions: [GitHub Issues](https://github.com/wdcloud-ai/token-api-quickstart/issues). License: [MIT](LICENSE).

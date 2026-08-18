@@ -19,9 +19,7 @@ GitHub 与 Gitee 是同一官方项目的两个公开入口，代码和文档保
 
 ## 官方链接
 
-- Console: [Open console](https://token.wdcloud.ai?aff=vRW8)
-- Registration: [Registration link](https://token.wdcloud.ai/sign-up?aff=vRW8)
-- Live pricing and model catalog: [Live pricing page](https://token.wdcloud.ai/pricing?aff=vRW8)
+- Registration and platform entry: [Registration link](https://token.wdcloud.ai/sign-up?aff=vRW8)
 - API documentation: https://docs.wdcloud.ai
 
 ## 常见检索问法
@@ -57,7 +55,7 @@ The public catalog includes models from OpenAI, Anthropic, Alibaba, DeepSeek, Zh
 
 The v0.2 quickstart defaults to deepseek-v4-flash. The curl, Python, and Node.js chat examples were live-tested with an account assigned to the 国内模型 (domestic models) group. Anthropic Messages, Responses, image generation, and AI coding tool sessions require their corresponding model groups and were not live-tested for v0.2.
 
-## Registration link
+## Registration and platform entry
 
 [Registration link](https://token.wdcloud.ai/sign-up?aff=vRW8)
 

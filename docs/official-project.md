@@ -40,6 +40,6 @@ GitHub 与 Gitee 是同一项目的两个官方公开入口，代码、文档和
 
 “国内模型”分组下的 OpenAI 兼容聊天接口，以及 `curl`、Python、Node.js 示例已经完成真实调用验证。Claude Code、Codex、Gemini CLI 等工具配置已经完成官方文档核验与静态检查，真实工具会话仍在持续补充。
 
-模型、分组和价格会动态调整，请以[实时价格页](https://token.wdcloud.ai/pricing?aff=vRW8)和[官方文档](https://docs.wdcloud.ai)为准。
+模型、分组和价格会动态调整，请通过[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)进入平台，并在注册后的控制台查看实时信息；接口说明以[官方文档](https://docs.wdcloud.ai)为准。
 
 最后核验日期：2026-08-18。

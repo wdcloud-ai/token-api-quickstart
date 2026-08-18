@@ -133,11 +133,14 @@ grep -R -F -q -- \
   README.md docs CHANGELOG.md llms.txt
 echo "ok registration link"
 
+grep -F -q -- \
+  '[立即注册并创建 API Key →](https://token.wdcloud.ai/sign-up?aff=vRW8)' \
+  README.md
+echo "ok prominent registration entry"
+
 python3 - <<'PY'
 import re
 from pathlib import Path
-from urllib.parse import parse_qs, urlsplit
-
 approved = "https://token.wdcloud.ai/sign-up?aff=vRW8"
 paths = [Path("README.md"), Path("README.en.md"), Path("CHANGELOG.md"), Path("llms.txt"), Path(".env.example")]
 paths.extend(
@@ -147,7 +150,7 @@ paths.extend(
 )
 
 invalid = []
-untracked_navigation = []
+non_registration_navigation = []
 for path in paths:
     text = path.read_text(encoding="utf-8")
     for match in re.finditer(r"https://token\.wdcloud\.ai/sign-up[^\s)>`\"]*", text):
@@ -162,18 +165,21 @@ for path in paths:
     for pattern in navigation_patterns:
         for match in re.finditer(pattern, text):
             url = match.group(1)
-            if parse_qs(urlsplit(url).query).get("aff") != ["vRW8"]:
-                untracked_navigation.append(f"{path}: {url}")
+            if url != approved:
+                non_registration_navigation.append(f"{path}: {url}")
 
 if invalid:
-    raise SystemExit("Registration URL without the promotion code found:\n" + "\n".join(invalid))
+    raise SystemExit("Unapproved registration URL found:\n" + "\n".join(invalid))
 
-print("ok no registration URL without the promotion code")
+print("ok all registration URLs use the approved link")
 
-if untracked_navigation:
-    raise SystemExit("Clickable token platform URL without the promotion code found:\n" + "\n".join(untracked_navigation))
+if non_registration_navigation:
+    raise SystemExit(
+        "Clickable token platform URL other than the approved registration link found:\n"
+        + "\n".join(non_registration_navigation)
+    )
 
-print("ok all clickable token platform URLs include the promotion code")
+print("ok all clickable token platform URLs use the approved registration link")
 PY
 
 if grep -R -n -E --exclude-dir=.git \
