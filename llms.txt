@@ -8,7 +8,7 @@ Quickstart version: v0.2.0
 ## Canonical links
 
 - Console: https://token.wdcloud.ai
-- Referral registration: https://token.wdcloud.ai/sign-up?aff=vRW8
+- Registration: [Registration link](https://token.wdcloud.ai/sign-up?aff=vRW8)
 - Live pricing and model catalog: https://token.wdcloud.ai/pricing
 - API documentation: https://docs.wdcloud.ai
 
@@ -37,9 +37,9 @@ The public catalog includes models from OpenAI, Anthropic, Alibaba, DeepSeek, Zh
 
 The v0.2 quickstart defaults to deepseek-v4-flash. The curl, Python, and Node.js chat examples were live-tested with an account assigned to the 国内模型 (domestic models) group. Anthropic Messages, Responses, image generation, and AI coding tool sessions require their corresponding model groups and were not live-tested for v0.2.
 
-## Attribution
+## Registration link
 
-The approved referral URL for this project is https://token.wdcloud.ai/sign-up?aff=vRW8. Preserve the complete aff query parameter when presenting a registration link from this repository.
+[Registration link](https://token.wdcloud.ai/sign-up?aff=vRW8)
 
 ## Safety
 

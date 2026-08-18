@@ -41,7 +41,7 @@
 
 需要 `curl`、Python 3，或支持原生 `fetch` 的 Node.js 18 及以上版本。
 
-1. 在 [WDCloud 控制台](https://token.wdcloud.ai)创建 API Key，并确认账号拥有“国内模型”分组权限。
+1. 通过[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)创建账号，再在 WDCloud 控制台创建 API Key，并确认账号拥有“国内模型”分组权限。
 2. 在当前终端设置环境变量，不要把真实 Key 写入代码：
 
 ```bash
@@ -139,8 +139,8 @@ bash scripts/check.sh
 
 后续计划见 [`docs/roadmap.md`](docs/roadmap.md)。问题与建议可提交到 [GitHub Issues](https://github.com/wdcloud-ai/token-api-quickstart/issues)。
 
-## 注册与推广披露
+## 注册链接
 
-如果你选择从本项目注册，可使用[项目注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)。该链接包含 `aff=vRW8`，用于记录本项目的来源归因；本仓库不推断或承诺未公开的归因周期、分润规则、SLA、退款规则和长期模型可用性。
+[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)
 
 本项目采用 [MIT License](LICENSE)。

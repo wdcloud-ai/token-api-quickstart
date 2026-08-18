@@ -24,7 +24,7 @@ English | [简体中文](README.md) · [GitHub](https://github.com/wdcloud-ai/to
 
 The examples require `curl`, Python 3, or Node.js 18+ with native `fetch` support.
 
-1. Create an API key in the [WDCloud console](https://token.wdcloud.ai) and confirm access to the domestic models group.
+1. Create an account through the [registration link](https://token.wdcloud.ai/sign-up?aff=vRW8), then create an API key in the WDCloud console and confirm access to the domestic models group.
 2. Export your key and model without committing them to Git:
 
 ```bash
@@ -76,8 +76,8 @@ Run local checks with:
 bash scripts/check.sh
 ```
 
-## Registration disclosure
+## Registration link
 
-If you choose to register through this project, use the [project registration link](https://token.wdcloud.ai/sign-up?aff=vRW8). It contains `aff=vRW8` for source attribution. This repository does not infer or promise undisclosed attribution periods, revenue-sharing rules, SLAs, refund terms, or long-term model availability.
+[Registration link](https://token.wdcloud.ai/sign-up?aff=vRW8)
 
 Questions and suggestions: [GitHub Issues](https://github.com/wdcloud-ai/token-api-quickstart/issues). License: [MIT](LICENSE).

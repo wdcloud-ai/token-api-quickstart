@@ -43,12 +43,6 @@
 
 v0.2 默认使用 `deepseek-v4-flash`，需要账号拥有“国内模型”分组权限。如果模型列表为空或出现 `No available channel`，应先检查账号或 API Key 对应的模型分组。
 
-## 推广链接
+## 注册链接
 
-平台前端使用 `aff` 查询参数接收推广码。本项目使用已确认的完整链接：
-
-```text
-https://token.wdcloud.ai/sign-up?aff=vRW8
-```
-
-不要删除或改写链接中的 `aff=vRW8`。归因周期和分润规则属于业务配置，不应由开发示例自行推断。
+[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)

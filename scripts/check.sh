@@ -98,11 +98,40 @@ for required in \
   'ANTHROPIC_BASE_URL' \
   'model_providers.wdcloud' \
   'GOOGLE_GEMINI_BASE_URL' \
-  'MIT License' \
-  'https://token.wdcloud.ai/sign-up?aff=vRW8'; do
+  'MIT License'; do
   grep -R -F -q -- "$required" README.md README.en.md LICENSE llms.txt docs examples .env.example
   echo "ok $required"
 done
+
+grep -R -F -q -- \
+  '[注册链接](https://token.wdcloud.ai/sign-up?aff=vRW8)' \
+  README.md docs CHANGELOG.md llms.txt
+echo "ok registration link"
+
+python3 - <<'PY'
+import re
+from pathlib import Path
+
+approved = "https://token.wdcloud.ai/sign-up?aff=vRW8"
+paths = [Path("README.md"), Path("README.en.md"), Path("CHANGELOG.md"), Path("llms.txt"), Path(".env.example")]
+paths.extend(
+    path
+    for path in Path("docs").rglob("*")
+    if path.is_file() and path.suffix in {".md", ".txt", ".html"}
+)
+
+invalid = []
+for path in paths:
+    text = path.read_text(encoding="utf-8")
+    for match in re.finditer(r"https://token\.wdcloud\.ai/sign-up[^\s)>`\"]*", text):
+        if match.group(0) != approved:
+            invalid.append(f"{path}: {match.group(0)}")
+
+if invalid:
+    raise SystemExit("Registration URL without the promotion code found:\n" + "\n".join(invalid))
+
+print("ok no registration URL without the promotion code")
+PY
 
 if grep -R -n -E --exclude-dir=.git \
   'WDCLOUD_MODEL=gpt-5\.4|WDCLOUD_MODEL:-gpt-5\.4|WDCLOUD_MODEL \|.*gpt-5\.4' .; then
