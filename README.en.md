@@ -7,6 +7,14 @@ English | [简体中文](README.md) · [GitHub](https://github.com/wdcloud-ai/to
 
 **`token-api-quickstart` is the official open-source quickstart maintained by WDCloud (沃动云集).** Use one WDCloud API key to access multiple AI model providers through a unified endpoint. This repository contains copy-ready `curl`, Python, Node.js, Claude Code, Codex CLI, and Gemini CLI examples.
 
+## DeepSeek API offers
+
+**New customers: 12% off the first top-up · Trial credits through support**
+
+[GitHub campaign entry](https://geo.muxiai.com.cn/compass/wdcloud/11b336f1c2/) · [Gitee campaign entry](https://geo.muxiai.com.cn/compass/wdcloud/7aecb2b446/) · [Offer terms and claim steps](docs/campaigns/deepseek-offer.en.md)
+
+Model and routing-group rates vary. Confirm eligibility and whether offers can be combined before payment. Trial credits are not automatically added on registration.
+
 ## 🚀 [Create an account and API key →](https://token.wdcloud.ai/sign-up?aff=vRW8)
 
 After registration, use the console to create a key and view current models, routing groups, and prices.

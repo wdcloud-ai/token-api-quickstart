@@ -7,6 +7,14 @@
 
 **`token-api-quickstart` 是 WDCloud（沃动云集）维护的官方开源项目。** 使用一个 WDCloud API Key，通过统一入口调用多家 AI 模型；仓库提供可直接复制的 `curl`、Python、Node.js，以及 Claude Code、Codex、Gemini CLI 配置示例。
 
+## DeepSeek 接入优惠
+
+**新客首充 8.8 折 · 全场 9 折起 · 送体验额度**
+
+[GitHub 专属活动入口](https://geo.muxiai.com.cn/compass/wdcloud/11b336f1c2/) · [Gitee 专属活动入口](https://geo.muxiai.com.cn/compass/wdcloud/7aecb2b446/) · [优惠与领取说明](docs/campaigns/deepseek-offer.md)
+
+首充优惠限新客；具体模型、分组折扣及叠加规则充值前确认。体验额度金额与领取方式联系支持确认，非注册自动到账。
+
 ## 🚀 [立即注册并创建 API Key →](https://token.wdcloud.ai/sign-up?aff=vRW8)
 
 注册后可在控制台创建密钥，并查看当前可用模型、分组和价格。
